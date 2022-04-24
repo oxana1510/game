@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fixed-bg:before {
+  position: fixed;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+
+.game-wrap {
+  background: url("img/sky.jpg") no-repeat center/cover #4a6489;
+  height: 100%;
+  overflow: hidden;
+}
+
+.game-wrap__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  max-width: calc(100vw - 20vw);
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.ballon {
+  position: absolute;
+  height: auto;
+  cursor: url('img/target.png') 12 12,auto;
+  -webkit-filter: drop-shadow( -2px 5px 5px rgba(0, 0, 0, .7));
+  filter: drop-shadow( -2px 5px 5px rgba(0, 0, 0, .7));
+  min-width: 50px;
+}
+
+.ballon.fall {
+  animation: disappear 0.3s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0) ;
+  }
+}
+
+#start,
+#continue-game {
+  position: absolute;
+  border: none;
+  background: cornflowerblue;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  top: calc(50% - 36px);
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 200px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#start:hover,
+#continue-game:hover {
+  background:rgb(52, 91, 163);
+}
+
+#continue-game {
+  display: none;
+  top: calc(50% + 24px);
+}
+
+#scoreBlock {
+  color: #fff;
+  font: bold 20px sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#pause {
+  display: none;
+  border: none;
+  background: cornflowerblue;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#pause:hover {
+  background:rgb(52, 91, 163);
+}
+
